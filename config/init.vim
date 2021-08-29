@@ -137,7 +137,8 @@ function! s:use_dein()
 	let l:cache_path = $VIM_DATA_PATH . '/dein'
 
 	if has('vim_starting')
-		let g:dein#auto_recache = v:true
+		" let g:dein#auto_recache = v:true
+		" let g:dein#lazy_rplugins = v:true
 		let g:dein#install_progress_type = 'echo'
 		let g:dein#install_message_type = 'echo'
 		let g:dein#install_max_processes = 10
