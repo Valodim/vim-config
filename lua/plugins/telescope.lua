@@ -161,6 +161,9 @@ local setup = function()
 	-- See telescope.nvim/lua/telescope/config.lua for defaults.
 	telescope.setup{
 		defaults = {
+			prompt_prefix = '❯ ',
+			selection_caret = '▷ ',
+			borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
 			sorting_strategy = 'ascending',
 			-- selection_strategy = 'follow',
 			scroll_strategy = 'cycle',

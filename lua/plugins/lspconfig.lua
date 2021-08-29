@@ -155,12 +155,12 @@ local function setup()
 
 	-- Configure help hover (normal K) handler
 	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-		vim.lsp.handlers.hover, { border = 'rounded' }
+		vim.lsp.handlers.hover, { border = 'none' }
 	)
 
 	-- Configure signature help (,s) handler
 	vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-		vim.lsp.handlers.signature_help, { border = 'rounded' }
+		vim.lsp.handlers.signature_help, { border = 'none' }
 	)
 
 	-- Configuration Plugins

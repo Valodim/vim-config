@@ -14,7 +14,7 @@ require('gitsigns').setup({
 	attach_to_untracked = true,
 	current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
 	preview_config = {
-		border = 'rounded',
+		border = 'none',
 	},
 	keymaps = {
 		noremap = true,

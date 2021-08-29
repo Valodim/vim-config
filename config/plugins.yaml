@@ -77,7 +77,7 @@
   if: has('nvim-0.5')
   on_cmd: Registers
   on_map: { i: '<C-r>', nx: '"' }
-  hook_source: lua require('registers').setup({ window={border="rounded"} })
+  hook_source: lua require('registers').setup({ window={border="none"} })
 
 - repo: rest-nvim/rest.nvim
   if: has('nvim-0.5')
