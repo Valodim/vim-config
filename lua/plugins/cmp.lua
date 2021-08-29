@@ -133,8 +133,8 @@ cmp.setup {
 	},
 
 	documentation = {
-		border = 'rounded',
-		winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+		border = 'single',
+		winhighlight = 'NormalFloat:NormalFloat,FloatBorder:UserBorder',
 	},
 
 	formatting = {

@@ -57,7 +57,7 @@ local on_attach = function(client, bufnr)
 	-- 	check_pumvisible = true,
 	-- 	hint_enable = false,
 	-- 	hint_prefix = ' ',  --  
-	-- 	handler_opts = { border = 'rounded' },
+	-- 	handler_opts = { border = 'none' },
 	-- 	zindex = 50,
 	-- }, bufnr)
 
@@ -157,12 +157,12 @@ local function setup()
 
 	-- Configure help hover (normal K) handler
 	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-		vim.lsp.handlers.hover, { border = 'rounded' }
+		vim.lsp.handlers.hover, { border = 'none' }
 	)
 
 	-- Configure signature help (,s) handler
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-		vim.lsp.handlers.signature_help, { border = 'rounded' }
+		vim.lsp.handlers.signature_help, { border = 'none' }
 	)
 
 	-- Setup language servers using nvim-lsp-installer
