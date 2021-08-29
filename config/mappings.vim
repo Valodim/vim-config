@@ -204,7 +204,7 @@ cnoremap <Down> <C-n>
 nmap <Leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 " Open file under the cursor in a vsplit
-nnoremap gf <cmd>vertical wincmd f<CR>
+nnoremap gF <cmd>vertical wincmd f<CR>
 
 " Fast saving from all modes
 nnoremap <Leader>w <cmd>write<CR>
