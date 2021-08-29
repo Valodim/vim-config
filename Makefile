@@ -1,4 +1,4 @@
-SHELL = /bin/bash
+SHELL = bash
 nvim ?= nvim
 nvim_version := '${shell $(nvim) --version}'
 XDG_DATA_HOME ?= $(HOME)/.local/share
