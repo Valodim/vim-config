@@ -1,0 +1,23 @@
+# disable some
+- { repo: norcalli/nvim-colorizer.lua, if: 0 }
+- { repo: t9md/vim-choosewin, if: 0 }
+- { repo: mattn/emmet-vim, if: 0 }
+- { repo: andersevenrud/compe-tmux, if: 0 }
+
+# modify to always splitjoin_trailing_comma
+- repo: AndrewRadev/splitjoin.vim
+  rev: main
+  on_map: { n: <Plug>Splitjoin }
+  hook_add: |-
+    let g:splitjoin_join_mapping = ''
+    let g:splitjoin_split_mapping = ''
+    let b:splitjoin_trailing_comma = 1
+
+# add my own
+- repo: tpope/vim-unimpaired
+- { repo: LnL7/vim-nix, on_ft: nix }
+
+- repo: kana/vim-altr
+  on_map: { n: <Plug> }
+  hook_source: call altr#define('%.ts', '%.test.ts')
+
