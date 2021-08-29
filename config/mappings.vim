@@ -25,8 +25,8 @@ endif
 " ----------
 
 " Double leader key for toggling visual-line mode
-nmap <Leader><Leader> V
-xmap <Leader><Leader> <Esc>
+" nmap <Leader><Leader> V
+" xmap <Leader><Leader> <Esc>
 
 " Toggle fold
 nnoremap <CR> za
