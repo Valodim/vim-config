@@ -25,7 +25,7 @@ function! Tabline()
 
 	" Active project name
 	let l:tabline =
-		\ '%#TabLineAlt# %{badge#project()} %#TabLineAltShade#'
+		\ '%#TabLineAlt# %{badge#project()} %#TabLineAltShade#'
 	" let l:tabline =
 	"	\ '%#TabLineAlt# %{"" . get(g:, "global_symbol_padding", " ") . badge#project()} %#TabLineAltShade#'
 
@@ -38,7 +38,7 @@ function! Tabline()
 
 		" Left-side of single tab
 		if l:nr == l:current
-			let l:tabline .= '%#TabLineFill#%#TabLineSel# '
+			let l:tabline .= '%#TabLineFill#%#TabLineSel# '
 		else
 			let l:tabline .= '%#TabLine#  '
 		endif
@@ -70,7 +70,7 @@ function! Tabline()
 
 		" Right-side of single tab
 		if l:nr == l:current
-			let l:tabline .= '%#TabLineSel# %#TabLineFill#'
+			let l:tabline .= '%#TabLineSel# %#TabLineFill#'
 		else
 			let l:tabline .= '%#TabLine#  '
 		endif
