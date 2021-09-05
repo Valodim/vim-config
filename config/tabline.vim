@@ -40,7 +40,7 @@ function! Tabline()
 		if l:nr == l:current
 			let l:tabline .= '%#TabLineFill#%#TabLineSel# '
 		else
-			let l:tabline .= '%#TabLine#  '
+			let l:tabline .= '%#TabLineAlt# '
 		endif
 
 		" Get file-name with custom cutoff settings
@@ -72,7 +72,7 @@ function! Tabline()
 		if l:nr == l:current
 			let l:tabline .= '%#TabLineSel# %#TabLineFill#'
 		else
-			let l:tabline .= '%#TabLine#  '
+			let l:tabline .= '%#TabLineAlt# '
 		endif
 	endfor
 
@@ -80,7 +80,7 @@ function! Tabline()
 
 	" Empty elastic space and session indicator
 	let l:tabline .=
-		\ '%#TabLineFill#%T%=%#TabLine#' .
+		\ '%#TabLineAltShade#%T%=%#TabLine#' .
 		\ '%{badge#session("' . fnamemodify(l:session_name, ':t:r') . '  ")}'
 
 	return l:tabline
