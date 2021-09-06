@@ -470,13 +470,14 @@ if dein#tap('telescope.nvim')
 	nnoremap <localleader>t <cmd>Telescope lsp_dynamic_workspace_symbols<CR>
 	nnoremap <localleader>v <cmd>Telescope registers<CR>
 	nnoremap <localleader>u <cmd>Telescope spell_suggest<CR>
-	nnoremap <localleader>s <cmd>Telescope persisted<CR>
+	" nnoremap <localleader>s <cmd>Telescope persisted<CR>
 	nnoremap <localleader>x <cmd>Telescope oldfiles<CR>
 	nnoremap <localleader>z <cmd>lua require('plugins.telescope').pickers.zoxide()<CR>
 	nnoremap <localleader>; <cmd>Telescope command_history<CR>
-	nnoremap <localleader>/ <cmd>Telescope search_history<CR>
+	" nnoremap <localleader>/ <cmd>Telescope search_history<CR>
 
 	" Git
+	nnoremap <localleader>s <cmd>Telescope git_status<CR>
 	nnoremap <leader>gs <cmd>Telescope git_status<CR>
 	nnoremap <leader>gr <cmd>Telescope git_branches<CR>
 	nnoremap <leader>gc <cmd>Telescope git_commits<CR>
@@ -488,11 +489,11 @@ if dein#tap('telescope.nvim')
 	nnoremap <localleader>w <cmd>ZkNotes<CR>
 
 	" Navigation
-	nnoremap <leader>/ <cmd>Telescope current_buffer_fuzzy_find<CR>
-	nnoremap <leader>gt <cmd>lua require('plugins.telescope').pickers.lsp_workspace_symbols_cursor()<CR>
-	nnoremap <leader>gf <cmd>lua require('plugins.telescope').pickers.find_files_cursor()<CR>
-	nnoremap <leader>gg <cmd>lua require('plugins.telescope').pickers.grep_string_cursor()<CR>
-	xnoremap <leader>gg <cmd>lua require('plugins.telescope').pickers.grep_string_visual()<CR>
+	nnoremap <localleader>/ <cmd>Telescope current_buffer_fuzzy_find<CR>
+	nnoremap <localleader>y <cmd>lua require('plugins.telescope').pickers.lsp_workspace_symbols_cursor()<CR>
+	" nnoremap <leader>gf <cmd>lua require('plugins.telescope').pickers.find_files_cursor()<CR>
+	nnoremap <localleader>G <cmd>lua require('plugins.telescope').pickers.grep_string_cursor()<CR>
+	xnoremap <localleader>g <cmd>lua require('plugins.telescope').pickers.grep_string_visual()<CR>
 
 	" LSP related
 	nnoremap <localleader>dd <cmd>Telescope lsp_definitions<CR>
