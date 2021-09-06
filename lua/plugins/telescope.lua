@@ -231,8 +231,8 @@ local setup = function()
 
 					['<Down>'] = actions.cycle_history_next,
 					['<Up>'] = actions.cycle_history_prev,
-					['<C-n>'] = actions.cycle_history_next,
-					['<C-p>'] = actions.cycle_history_prev,
+					-- ['<C-n>'] = actions.cycle_history_next,
+					-- ['<C-p>'] = actions.cycle_history_prev,
 
 					['<C-b>'] = actions.preview_scrolling_up,
 					['<C-f>'] = actions.preview_scrolling_down,
