@@ -311,7 +311,7 @@ if get(g:, 'enable_universal_quit_mapping', 1)
 endif
 
 " Switch with adjacent window
-nnoremap <C-x> <C-w>x
+" nnoremap <C-x> <C-w>x
 
 " Window-control prefix
 nnoremap  [Window]   <Nop>
