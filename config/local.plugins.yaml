@@ -4,6 +4,9 @@
 - { repo: mattn/emmet-vim, if: 0 }
 - { repo: andersevenrud/compe-tmux, if: 0 }
 
+# my completion sources
+- { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
+
 # modify to always splitjoin_trailing_comma
 - repo: AndrewRadev/splitjoin.vim
   rev: main
