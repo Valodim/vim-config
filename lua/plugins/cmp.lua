@@ -107,6 +107,10 @@ cmp.setup {
 			cmp.close()
 			fallback()
 		end,
+		['<C-y>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		}),
 		['<CR>'] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 		}),
