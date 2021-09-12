@@ -632,7 +632,8 @@ if dein#tap('trouble.nvim')
 	nnoremap <leader>xl <cmd>TroubleToggle loclist<CR>
 	nnoremap ]t <cmd>lua require('trouble').next({skip_groups = true, jump = true})<CR>
 	nnoremap [t <cmd>lua require('trouble').previous({skip_groups = true, jump = true})<CR>
-	nnoremap gR <cmd>TroubleToggle lsp_references<CR>
+	nnoremap gr <cmd>TroubleToggle lsp_references<CR>
+	nnoremap gR <cmd>TroubleToggle lsp_definitions<CR>
 endif
 
 if dein#tap('diffview.nvim')
