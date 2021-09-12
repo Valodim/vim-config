@@ -62,6 +62,7 @@ cmp.setup {
 	sources = cmp_get_sources({
 		'nvim_lsp',
 		'buffer',
+		'emoji',
 		'path',
 		'calc',
 		'vsnip',
