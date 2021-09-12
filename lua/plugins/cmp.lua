@@ -16,6 +16,7 @@ _G.cmp_get_sources = function(arr)
 		vsnip = { name = 'vsnip' },
 		tmux  = { name = 'tmux', option = { all_panes = true }},
 		latex = { name = 'latex_symbols' },
+		calc = { name = 'calc' }
 	}
 	local sources = {}
 	for _, name in ipairs(arr) do
@@ -62,6 +63,7 @@ cmp.setup {
 		'nvim_lsp',
 		'buffer',
 		'path',
+		'calc',
 		'vsnip',
 		'tmux',
 	}),
