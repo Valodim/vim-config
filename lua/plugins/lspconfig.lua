@@ -199,11 +199,14 @@ local function setup()
 	]], false)
 
 	local lspconfig = require('lspconfig')
-	for _, server in ipairs({ 'rust_analyzer', 'tsserver', 'gopls' }) do
+	for _, server in ipairs({ 'rust_analyzer', 'gopls' }) do
 		local opts = make_config(server)
 		lspconfig[server].setup(opts)
 	end
 
+	-- special treatment for tsserver via typescript.nvim
+	local opts = make_config('tsserver')
+	require("typescript").setup(opts)
 end
 
 return {

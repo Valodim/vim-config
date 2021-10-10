@@ -15,6 +15,9 @@
 # my completion sources
 - { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
 
+- repo: jose-elias-alvarez/typescript.nvim
+  on_source: nvim-lspconfig
+
 # add my own
 - repo: tpope/vim-unimpaired
 
