@@ -43,6 +43,12 @@ local on_attach = function(client, bufnr)
 		map_buf('x', ',f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 	end
 
+	map_buf('n', ',r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	map_buf('n', '[d', '<cmd>lua require("user").diagnostic.goto_prev()<CR>', opts)
+	map_buf('n', ']d', '<cmd>lua require("user").diagnostic.goto_next()<CR>', opts)
+	map_buf('n', ',a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	map_buf('n', ',d', '<cmd>lua require("user").diagnostic.show_line_diagnostics()<CR>', opts)
+
 	-- lspsaga.nvim
 	-- See https://github.com/glepnir/lspsaga.nvim
 	-- buf_set_keymap('n', '<Leader>f', '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>', opts)
