@@ -55,6 +55,12 @@ local on_attach = function(client, bufnr)
 		map_buf('x', ',f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 	end
 
+	map_buf('n', ',r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	map_buf('n', ',a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	map_buf('n', ',d', '<cmd>lua vim.diagnostic.open_float({scope="line"})<CR>', opts)
+	map_buf('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+	map_buf('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+
 	-- nvim-navic
 	-- See https://github.com/SmiteshP/nvim-navic
 	local navic = require('nvim-navic')
