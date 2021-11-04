@@ -2,6 +2,7 @@
 --
 
 local config = {
+	cmd = {"gopls", "-remote=auto"},
 	settings = {
 		gopls = {
 			staticcheck = true,
