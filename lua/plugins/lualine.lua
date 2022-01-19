@@ -186,7 +186,7 @@ local config = {
 		lualine_a = {
 			-- Box boundary
 			{
-				function() return '▊' end,
+				function() return ' ' end,
 				color = { fg = colors.active.boundary },
 				padding = { left = 0, right = 1 },
 			},
