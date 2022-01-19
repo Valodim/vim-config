@@ -181,6 +181,10 @@ local setup = function()
 				num_pickers = 3,
 				limit_entries = 300,
 			},
+			file_ignore_patterns = {
+				"node_modules/",
+				"target/"
+			},
 
 			prompt_prefix = '❯ ',
 			selection_caret = '▷ ',
