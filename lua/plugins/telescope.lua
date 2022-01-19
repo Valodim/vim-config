@@ -137,7 +137,11 @@ local width_for_nopreview = function(_, cols, _)
 end
 
 local height_dropdown_nopreview = function(_, _, rows)
-	return math.floor(rows * 0.7)
+	return math.floor(rows * 0.4)
+end
+
+local height_ivy_nopreview = function(_, _, rows)
+	return math.floor(rows * 0.4)
 end
 
 -- Enable indent-guides in telescope preview
@@ -171,6 +175,11 @@ local setup = function()
 				num_pickers = 3,
 				limit_entries = 300,
 			},
+			file_ignore_patterns = {
+				"node_modules/",
+				"target/",
+				"lib/"
+			},
 
 			prompt_prefix = "   ",
 			-- prompt_prefix = '❯ ',
@@ -179,36 +188,6 @@ local setup = function()
 
 			file_ignore_patterns = { 'node_modules' },
 			set_env = { COLORTERM = 'truecolor' },
-
-			-- Flex layout swaps between horizontal and vertical strategies
-			-- based on the window width. See :h telescope.layout
-			layout_strategy = 'flex',
-			layout_config = {
-				width = 0.9,
-				height = 0.85,
-				prompt_position = 'top',
-				-- center = {
-				-- 	preview_cutoff = 40
-				-- },
-				horizontal = {
-					-- width_padding = 0.1,
-					-- height_padding = 0.1,
-					-- preview_cutoff = 60,
-					preview_width = horizontal_preview_width,
-				},
-				vertical = {
-					-- width_padding = 0.05,
-					-- height_padding = 1,
-					width = 0.75,
-					height = 0.85,
-					preview_height = 0.4,
-					mirror = true,
-				},
-				flex = {
-					-- change to horizontal after 120 cols
-					flip_columns = 120,
-				},
-			},
 
 			mappings = {
 
@@ -293,12 +272,13 @@ local setup = function()
 				}
 			},
 			find_files = {
-				theme = 'dropdown',
+				theme = 'ivy',
 				previewer = false,
 				layout_config = {
 					width = width_for_nopreview,
-					height = height_dropdown_nopreview,
+					height = height_ivy_nopreview,
 				},
+				results_title = '';
 				find_command = {
 					'rg',
 					'--smart-case',
@@ -332,7 +312,7 @@ local setup = function()
 				layout_config = { width = 0.6, height = 0.7 },
 			},
 			command_history = {
-				theme = 'dropdown',
+				theme = 'ivy',
 				previewer = false,
 				layout_config = { width = 0.5, height = 0.7 },
 			},
@@ -350,7 +330,7 @@ local setup = function()
 				layout_config = { width = 0.45, height = 0.6 },
 			},
 			oldfiles = {
-				theme = 'dropdown',
+				theme = 'ivy',
 				previewer = false,
 				path_display= { shorten = 5 },
 				layout_config = {
