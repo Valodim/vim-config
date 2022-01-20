@@ -160,7 +160,6 @@
 
 - repo: chentau/marks.nvim
   if: has('nvim-0.5')
-  depends: gitsigns.nvim
   on_event: FileType
   hook_post_source: lua require('plugins.marks')
 
@@ -350,7 +349,6 @@
 
 - repo: rmagatti/auto-session
   if: has('nvim-0.5')
-  depends: [ gitsigns.nvim, nvim-lspconfig ]
   on_event: VimEnter
   hook_post_source: lua require('plugins.auto-session')
   hook_add: |-
