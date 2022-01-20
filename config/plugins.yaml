@@ -180,7 +180,6 @@
 
 - repo: chentoast/marks.nvim
   if: has('nvim-0.5')
-  depends: gitsigns.nvim
   on_event: FileType
   hook_post_source: lua require('plugins.marks')
 
