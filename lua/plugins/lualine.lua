@@ -1,6 +1,7 @@
 -- Rafi's custom statusline for lualine
 local lualine = require('lualine')
 local badge = require('badge')
+local gps = require('nvim-gps')
 
 -- Color table for highlights
 local colors = {
@@ -226,6 +227,36 @@ local config = {
 				padding = { left = 0, right = 0 },
 			},
 
+			-- current function context
+			{
+				gps.get_location,
+				cond = gps.is_available,
+				padding = { left = 1, right = 0 },
+			},
+
+			-- Start truncating here
+			{ function() return '%<' end, padding = { left = 0, right = 0 }},
+
+			-- Whitespace trails
+			{ badge.trails('␣'), padding = { left = 1, right = 0 }},
+		},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = { function() return '%=' end },
+		lualine_y = {
+			-- Git status
+			{
+				'diff',
+				symbols = { added = '₊', modified = '∗', removed = '₋' },
+				diff_color = {
+					added = { fg = colors.git.added },
+					modified = { fg = colors.git.modified },
+					removed = { fg = colors.git.deleted },
+				},
+				cond = conditions.hide_in_width(70),
+				padding = { left = 0, right = 2 },
+			},
+
 			-- Diagnostics
 			{
 				'diagnostics',
@@ -237,40 +268,9 @@ local config = {
 					info = { fg = colors.diagnostics.info },
 					hint = { fg = colors.diagnostics.hint },
 				},
-				padding = { left = 1, right = 0 },
+				padding = { left = 0, right = 2 },
 			},
 
-			-- Start truncating here
-			{ function() return '%<' end, padding = { left = 0, right = 0 }},
-
-			-- Whitespace trails
-			{ badge.trails('␣'), padding = { left = 1, right = 0 }},
-
-			-- Git branch
-			{
-				'branch',
-				icon = '',
-				-- cond = conditions.check_git_workspace,
-				padding = { left = 1, right = 0 },
-			},
-
-			-- Git status
-			{
-				'diff',
-				symbols = { added = '₊', modified = '∗', removed = '₋' },
-				diff_color = {
-					added = { fg = colors.git.added },
-					modified = { fg = colors.git.modified },
-					removed = { fg = colors.git.deleted },
-				},
-				cond = conditions.hide_in_width(70),
-				padding = { left = 1, right = 0 },
-			},
-		},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = { function() return '%=' end },
-		lualine_y = {
 			-- File format, encoding and type.
 			{
 				badge.filemedia('  '),
