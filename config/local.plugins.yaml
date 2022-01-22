@@ -7,8 +7,8 @@
 # my completion sources
 - { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
 
-- { repo: jose-elias-alvarez/null-ls.nvim, lazy: 1 }
-- { repo: jose-elias-alvarez/nvim-lsp-ts-utils, depends: null-ls.nvim, on_source: nvim-cmp }
+- { repo: jose-elias-alvarez/null-ls.nvim, on_source: nvim-lspconfig }
+- { repo: jose-elias-alvarez/nvim-lsp-ts-utils, on_source: nvim-lspconfig }
 
 # modify to always splitjoin_trailing_comma
 - repo: AndrewRadev/splitjoin.vim

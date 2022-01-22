@@ -1,5 +1,5 @@
-require("null-ls").config {}
-require("lspconfig")["null-ls"].setup {}
+-- require("null-ls").setup {}
+-- require("lspconfig")["null-ls"].setup {}
 
 local function on_attach_nvim_lsp_ts_utils(client, bufnr)
   local function map_buf(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -58,6 +58,15 @@ local function on_attach_nvim_lsp_ts_utils(client, bufnr)
   local opts = { silent = true }
 
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+
+  local null_ls = require("null-ls")
+  null_ls.setup({
+      sources = {
+          null_ls.builtins.diagnostics.eslint_d, -- eslint or eslint_d
+          null_ls.builtins.code_actions.eslint_d, -- eslint or eslint_d
+          null_ls.builtins.formatting.prettier -- prettier, eslint, eslint_d, or prettierd
+      },
+  })
 
   map_buf('n', ',f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   map_buf('v', ',f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
