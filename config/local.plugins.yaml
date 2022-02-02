@@ -27,3 +27,8 @@
   on_map: { n: <Plug> }
   hook_source: call altr#define('%.ts', '%.test.ts')
 
+- repo: arthurxavierx/vim-caser
+  on_map: { nx: ',c' }
+  hook_add: |-
+    let g:caser_prefix = ',c'
+
