@@ -37,3 +37,9 @@
     call altr#define('%.po', 'en/messages.po', 'de/messages.po')
 
 - { repo: LnL7/vim-nix, on_ft: nix }
+
+- repo: arthurxavierx/vim-caser
+  on_map: { nx: ',c' }
+  hook_add: |-
+    let g:caser_prefix = ',c'
+
