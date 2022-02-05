@@ -10,6 +10,11 @@
 - { repo: jose-elias-alvarez/null-ls.nvim, on_source: nvim-lspconfig }
 - { repo: jose-elias-alvarez/nvim-lsp-ts-utils, on_source: nvim-lspconfig }
 
+- repo: xiyaowong/telescope-emoji.nvim
+  if: has('nvim-0.5')
+  on_source: telescope.nvim
+  hook_source: lua require('telescope').load_extension('emoji')
+
 # modify to always splitjoin_trailing_comma
 - repo: AndrewRadev/splitjoin.vim
   rev: main
