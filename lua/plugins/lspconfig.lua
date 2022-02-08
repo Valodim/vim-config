@@ -60,14 +60,17 @@ local on_attach = function(client, bufnr)
 
 	-- lsp_signature.nvim
 	-- See https://github.com/ray-x/lsp_signature.nvim
-	-- require('lsp_signature').on_attach({
-	-- 	bind = true,
-	-- 	check_pumvisible = true,
-	-- 	hint_enable = false,
-	-- 	hint_prefix = ' ',  --  
-	-- 	handler_opts = { border = 'none' },
-	-- 	zindex = 50,
-	-- }, bufnr)
+	require('lsp_signature').on_attach({
+		bind = true,
+		check_pumvisible = true,
+		hint_enable = false,
+		hint_prefix = ' ',  --  
+		handler_opts = { border = 'none' },
+		zindex = 50,
+	}, bufnr)
+	vim.api.nvim_exec([[
+		highlight! LspSignatureActiveParameter ctermfg=143 guifg=#b5bd68
+	]], false)
 
 	if client.config.flags then
 		client.config.flags.allow_incremental_sync = true
