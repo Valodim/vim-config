@@ -2,6 +2,7 @@
 local lualine = require('lualine')
 local badge = require('badge')
 local gps = require('nvim-gps')
+local dap = require('dap')
 
 -- Color table for highlights
 local colors = {
@@ -73,7 +74,10 @@ local conditions = {
 		local filepath = vim.fn.expand('%:p:h')
 		local gitdir = vim.fn.finddir('.git', filepath .. ';')
 		return gitdir and #gitdir > 0 and #gitdir < #filepath
-	end
+	end,
+	dap_active = function()
+		return dap.session() ~= nil
+	end,
 }
 
 -- Detect quickfix vs. location list
@@ -244,6 +248,14 @@ local config = {
 		lualine_c = {},
 		lualine_x = { function() return '%=' end },
 		lualine_y = {
+			-- DAP status
+			{
+				function() return '' end,
+				color = { fg = colors.active.filepath },
+				padding = { left = 0, right = 2 },
+				cond = conditions.dap_active,
+			},
+
 			-- Git status
 			{
 				'diff',

@@ -46,3 +46,14 @@
   hook_add: |-
     let g:caser_prefix = ',c'
 
+# DAP
+- repo: mfussenegger/nvim-dap
+  if: has('nvim-0.5')
+  on_event: VimEnter
+  lazy: 1
+  hook_post_source: lua require('plugins.dap').setup()
+- repo: leoluz/nvim-dap-go
+  on_source: nvim-dap
+# - repo: theHamsta/nvim-dap-virtual-text
+#   on_source: nvim-dap
+#   hook_post_source: lua require('nvim-dap-virtual-text').setup()
