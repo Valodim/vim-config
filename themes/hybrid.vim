@@ -251,4 +251,10 @@ let g:choosewin_color_other = {
 	\ 'cterm': [ 235, 235 ], 'gui': [ '#232323', '#000000' ] }
 " }}}
 
+" Plugin: vim-illuminate {{{
+highlight! link IlluminatedWordText LspReferenceText
+highlight! link IlluminatedWordWrite LspReferenceWrite
+highlight! link IlluminatedWordRead LspReferenceRead
+" }}}
+
 " vim: set foldmethod=marker ts=2 sw=0 tw=80 noet :

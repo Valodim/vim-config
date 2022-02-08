@@ -12,6 +12,12 @@
   on_cmd: Oil
   hook_source: lua require('oil').setup({ keymaps = { ["<C-s>"] = false } })
 
+# use vim-illuminate over vim-cursorword
+- { repo: itchyny/vim-cursorword, if: 0 }
+- repo: RRethy/vim-illuminate
+  merged: 0
+  hook_source: lua require('illuminate').configure({ under_cursor = false, providers = { 'lsp' } })
+
 # my completion sources
 - { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
 
