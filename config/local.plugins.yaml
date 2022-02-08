@@ -4,6 +4,10 @@
 - { repo: mattn/emmet-vim, if: 0 }
 - { repo: andersevenrud/compe-tmux, if: 0 }
 
+# use vim-illuminate over vim-cursorword
+- { repo: itchyny/vim-cursorword, if: 0 }
+- { repo: RRethy/vim-illuminate }
+
 # my completion sources
 - { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
 

@@ -49,6 +49,9 @@ local on_attach = function(client, bufnr)
 	map_buf('n', ',a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 	map_buf('n', ',d', '<cmd>lua require("user").diagnostic.show_line_diagnostics()<CR>', opts)
 
+	map_buf('n', ']s', '<cmd>lua require("illuminate").next_reference{wrap=true}<CR>', opts)
+	map_buf('n', '[s', '<cmd>lua require("illuminate").next_reference{reverse=true,wrap=true}<CR>', opts)
+
 	-- lspsaga.nvim
 	-- See https://github.com/glepnir/lspsaga.nvim
 	-- buf_set_keymap('n', '<Leader>f', '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>', opts)
@@ -72,6 +75,8 @@ local on_attach = function(client, bufnr)
 		highlight! LspSignatureActiveParameter ctermfg=143 guifg=#b5bd68
 	]], false)
 
+	require('illuminate').on_attach(client)
+
 	if client.config.flags then
 		client.config.flags.allow_incremental_sync = true
 		client.config.flags.debounce_text_changes  = vim.opt.updatetime:get()
@@ -80,6 +85,12 @@ local on_attach = function(client, bufnr)
 	-- Set autocommands conditional on server_capabilities
 	if client.resolved_capabilities.document_highlight then
 		vim.api.nvim_exec([[
+			highlight! link LspReferenceText illuminatedWord
+			highlight! link LspReferenceWrite illuminatedWord
+			highlight! link LspReferenceRead illuminatedWord
+			" highlight! LspReferenceRead ctermbg=237 guibg=#3D3741
+			" highlight! LspReferenceText ctermbg=237 guibg=#373B41
+			" highlight! LspReferenceWrite ctermbg=237 guibg=#374137
 			augroup lsp_document_highlight
 				autocmd! * <buffer>
 				autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
