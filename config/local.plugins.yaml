@@ -8,6 +8,13 @@
 - { repo: itchyny/vim-cursorword, if: 0 }
 - { repo: RRethy/vim-illuminate }
 
+# use neorg instead of orgmode
+- { repo: kristijanhusak/orgmode.nvim, if: 0 }
+- repo: nvim-neorg/neorg
+  on_ft: norg
+  depends: [ nvim-treesitter, telescope.nvim, plenary.nvim ]
+  hook_source: lua require('neorg').setup({ load = { ["core.defaults"] = {} } })
+
 # my completion sources
 - { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
 
