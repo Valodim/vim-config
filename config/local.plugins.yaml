@@ -32,6 +32,9 @@
 - repo: tpope/vim-unimpaired
 - { repo: LnL7/vim-nix, on_ft: nix }
 
+- { repo: deris/vim-shot-f, if: 0 }
+- { repo: ggandor/lightspeed.nvim, on_map: { n: ['s', 'S', 'f', 't', 'F', 'T'] } }
+
 - repo: kana/vim-altr
   on_map: { n: <Plug> }
   hook_source: call altr#define('%.ts', '%.test.ts')

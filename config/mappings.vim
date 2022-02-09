@@ -167,7 +167,7 @@ nnoremap \ ;
 nnoremap <expr> gpp '`['.strpart(getregtype(), 0, 1).'`]'
 
 " Quick substitute within selected area
-xnoremap sg :s//gc<Left><Left><Left>
+" xnoremap sg :s//gc<Left><Left><Left>
 
 " C-r: Easier search and replace visual/select mode
 xnoremap <C-r> :<C-u>%s/\V<C-R>=<SID>get_selection()<CR>//gc<Left><Left><Left>
@@ -308,26 +308,26 @@ endif
 " nnoremap <C-x> <C-w>x
 
 " Window-control prefix
-nnoremap  [Window]   <Nop>
-nmap      s [Window]
+" nnoremap  [Window]   <Nop>
+" nmap      s [Window]
 
-nnoremap [Window]b  <cmd>buffer#<CR>
-nnoremap [Window]c  <cmd>close<CR>
-nnoremap [Window]d  <cmd>bdelete<CR>
-nnoremap [Window]v  <cmd>split<CR>
-nnoremap [Window]g  <cmd>vsplit<CR>
-nnoremap [Window]t  <cmd>tabnew<CR>
-nnoremap [Window]o  <cmd>only<CR>
-nnoremap [Window]q  <cmd>quit<CR>
-nnoremap [Window]x  <cmd>call <SID>window_empty_buffer()<CR>
-nnoremap [Window]z  <cmd>call <SID>zoom()<CR>
+" nnoremap [Window]b  <cmd>buffer#<CR>
+" nnoremap [Window]c  <cmd>close<CR>
+" nnoremap [Window]d  <cmd>bdelete<CR>
+" nnoremap [Window]v  <cmd>split<CR>
+" nnoremap [Window]g  <cmd>vsplit<CR>
+" nnoremap [Window]t  <cmd>tabnew<CR>
+" nnoremap [Window]o  <cmd>only<CR>
+" nnoremap [Window]q  <cmd>quit<CR>
+" nnoremap [Window]x  <cmd>call <SID>window_empty_buffer()<CR>
+" nnoremap [Window]z  <cmd>call <SID>zoom()<CR>
 
 " Split current buffer, go to previous window and previous buffer
-nnoremap [Window]sv <cmd>split<CR>:wincmd p<CR>:e#<CR>
-nnoremap [Window]sg <cmd>vsplit<CR>:wincmd p<CR>:e#<CR>
+" nnoremap [Window]sv <cmd>split<CR>:wincmd p<CR>:e#<CR>
+" nnoremap [Window]sg <cmd>vsplit<CR>:wincmd p<CR>:e#<CR>
 
 " Background dark/light toggle
-nmap [Window]h <cmd>call <SID>toggle_background()<CR>
+" nmap [Window]h <cmd>call <SID>toggle_background()<CR>
 
 " }}}
 " Helper functions {{{
@@ -745,8 +745,8 @@ if dein#tap('sideways.vim')
 endif
 
 if dein#tap('splitjoin.vim')
-	nmap sj <cmd>SplitjoinJoin<CR>
-	nmap sk <cmd>SplitjoinSplit<CR>
+	nmap zj <cmd>SplitjoinJoin<CR>
+	nmap zk <cmd>SplitjoinSplit<CR>
 endif
 
 if dein#tap('linediff.vim')
