@@ -12,6 +12,8 @@
   on_cmd: Oil
   hook_source: lua require('oil').setup({ keymaps = { ["<C-s>"] = false } })
 
+- repo: tpope/vim-repeat
+
 # use vim-illuminate over vim-cursorword
 - { repo: itchyny/vim-cursorword, if: 0 }
 - repo: RRethy/vim-illuminate
@@ -26,6 +28,10 @@
 
 # add my own
 - repo: tpope/vim-unimpaired
+
+# use lightspeed over vim-shot-f
+- { repo: deris/vim-shot-f, if: 0 }
+- { repo: ggandor/lightspeed.nvim, on_map: { n: ['s', 'S', 'f', 't', 'F', 'T'] } }
 
 - repo: kana/vim-altr
   on_map: { n: <Plug> }

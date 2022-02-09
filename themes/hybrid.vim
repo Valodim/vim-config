@@ -257,4 +257,8 @@ highlight! link IlluminatedWordWrite LspReferenceWrite
 highlight! link IlluminatedWordRead LspReferenceRead
 " }}}
 
+" Plugin: lightspeed.nvim {{{
+highlight! link LightspeedCursor TermCursor
+" }}}
+
 " vim: set foldmethod=marker ts=2 sw=0 tw=80 noet :
