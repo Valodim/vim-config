@@ -734,8 +734,8 @@ if dein#tap('nvim-ts-hint-textobject')
 endif
 
 if dein#tap('sideways.vim')
-	nnoremap <silent> <, <cmd>SidewaysLeft<CR>
-	nnoremap <silent> >, <cmd>SidewaysRight<CR>
+	nnoremap <silent> ,< <cmd>SidewaysLeft<CR>
+	nnoremap <silent> ,> <cmd>SidewaysRight<CR>
 	nnoremap <silent> [, <cmd>SidewaysJumpLeft<CR>
 	nnoremap <silent> ], <cmd>SidewaysJumpRight<CR>
 	omap <silent> a, <Plug>SidewaysArgumentTextobjA
