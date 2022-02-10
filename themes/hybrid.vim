@@ -69,7 +69,7 @@ highlight User8 guifg=#ffb964 guibg=#30302c ctermfg=215 ctermbg=236
 " Highlights: General GUI {{{
 " ---
 " :h slow-terminal  " gui=NONE guifg=NONE
-highlight IncSearch guifg=#222222 guibg=#99ad6a cterm=NONE gui=NONE
+highlight IncSearch guifg=#222222 guibg=#99ad6a ctermbg=252 ctermfg=239 gui=NONE
 highlight NonText cterm=NONE ctermfg=NONE
 highlight! link jsFutureKeys PreProc
 highlight! WarningMsg  ctermfg=100 guifg=#CCC566
