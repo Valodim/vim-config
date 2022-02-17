@@ -471,6 +471,7 @@ if dein#tap('telescope.nvim')
 	nnoremap <localleader>/ <cmd>Telescope search_history<CR>
 
 	" Git
+	nnoremap <localleader>G <cmd>Telescope git_status<CR>
 	nnoremap <leader>gs <cmd>Telescope git_status<CR>
 	nnoremap <leader>gr <cmd>Telescope git_branches<CR>
 	nnoremap <leader>gc <cmd>Telescope git_commits<CR>
@@ -665,7 +666,9 @@ if dein#tap('gina.vim')
 	nnoremap <silent> <leader>gF <cmd>Gina! fetch<CR>
 	nnoremap <silent> <leader>gp <cmd>Gina! push<CR>
 	nnoremap <silent> <leader>go <cmd>,Gina browse :<CR>
+	nnoremap <silent> <leader>gy <cmd>,Gina browse --yank :<CR>
 	xnoremap <silent> <leader>go :Gina browse :<CR>
+	xnoremap <silent> <leader>gy :Gina browse --yank :<CR>
 endif
 
 if dein#tap('zen-mode.nvim')
