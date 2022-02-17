@@ -26,6 +26,8 @@
 - repo: jose-elias-alvarez/typescript.nvim
   on_source: nvim-lspconfig
 
+- { repo: wellle/targets.vim, on_event: [ CursorMoved ] }
+
 # add my own
 - repo: tpope/vim-unimpaired
 
