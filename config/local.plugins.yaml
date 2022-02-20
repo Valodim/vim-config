@@ -64,3 +64,14 @@
 # - repo: theHamsta/nvim-dap-virtual-text
 #   on_source: nvim-dap
 #   hook_post_source: lua require('nvim-dap-virtual-text').setup()
+
+# - repo: akinsho/bufferline.nvim
+# depends: nvim-web-devicons
+# hook_source: lua require("bufferline").setup{}
+
+- repo: hoschi/yode-nvim
+  if: has('nvim-0.6')
+  depends: plenary.nvim
+  lazy: 1
+  on_cmd: Yode
+  hook_source: lua require('yode-nvim').setup({})

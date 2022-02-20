@@ -766,4 +766,44 @@ endif
 
 " }}}
 
+function! s:YodeCreateSeditorFloatingStay()
+	let saved_pos = winsaveview()
+	exe "normal vaf:YodeCreateSeditorFloating\<CR>"
+	exe "normal! \<c-w>p"
+	call winrestview(saved_pos)
+endfunction
+command! YodeCreateSeditorFloatingStay call s:YodeCreateSeditorFloatingStay()
+
+function! YodeCreateSeditorFloatingOp(type = '') abort
+	if a:type == ''
+		let g:saved_view = winsaveview()
+		set opfunc=YodeCreateSeditorFloatingOp
+		return 'g@'
+	endif
+
+	lua << EOF
+		local yode = require('yode-nvim')
+
+		local _, line1, _, _ = unpack(vim.fn.getpos("'["))
+		local _, line2, _, _ = unpack(vim.fn.getpos("']"))
+		yode.createSeditorFloating(line1, line2)
+
+    vim.cmd [[wincmd p]]
+		vim.fn.winrestview(vim.g.saved_view)
+		vim.g.saved_view = nil
+EOF
+endfunction
+
+if dein#tap('yode-nvim')
+	nnoremap <expr> <C-W>f YodeCreateSeditorFloatingOp()
+	nmap <C-W><C-F> :YodeCreateSeditorFloatingStay<CR>
+	vmap <C-W>f :YodeCreateSeditorFloating<CR>
+	vmap <C-W><C-F> :YodeCreateSeditorFloating<CR>
+	" these commands fall back to overwritten keys when cursor is in split window
+	" map <C-W>r :YodeLayoutShiftWinDown<CR>
+	" map <C-W>R :YodeLayoutShiftWinUp<CR>
+	" map <C-W>J :YodeLayoutShiftWinBottom<CR>
+	" map <C-W>K :YodeLayoutShiftWinTop<CR>
+endif
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
