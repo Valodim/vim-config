@@ -8,7 +8,7 @@ local cmp = require('cmp')
 -- Source setup. Helper function for cmp source presets.
 _G.cmp_get_sources = function(arr)
 	local config = {
-		buffer = { name = 'buffer' },
+		-- buffer = { name = 'buffer' },
 		nvim_lsp = { name = 'nvim_lsp' },
 		nvim_lua = { name = 'nvim_lua' },
 		path  = { name = 'path' },
