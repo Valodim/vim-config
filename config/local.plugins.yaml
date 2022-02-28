@@ -26,6 +26,10 @@
 - repo: jose-elias-alvarez/typescript.nvim
   on_source: nvim-lspconfig
 
+- repo: Valodim/fidget.nvim
+  on_source: nvim-lspconfig
+  hook_source: lua require('plugins.fidget')
+
 - { repo: wellle/targets.vim, on_event: [ CursorMoved ] }
 
 # add my own
