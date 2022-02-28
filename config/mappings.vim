@@ -798,4 +798,10 @@ if dein#tap('oil.nvim')
 	nmap - <cmd>Oil<cr>
 endif
 
+if dein#tap('twilight.nvim')
+	nnoremap yot :Twilight<CR>
+	nnoremap [ot :TwilightEnable<CR>
+	nnoremap ]ot :TwilightDisable<CR>
+endif
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

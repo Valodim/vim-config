@@ -29,6 +29,9 @@
 - repo: Valodim/fidget.nvim
   on_source: nvim-lspconfig
   hook_source: lua require('plugins.fidget')
+- repo: folke/twilight.nvim
+  on_cmd: ['Twilight', 'TwilightEnable', 'TwilightDisable']
+  hook_source: lua require('plugins.twilight')
 
 - { repo: wellle/targets.vim, on_event: [ CursorMoved ] }
 
