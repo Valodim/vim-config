@@ -122,22 +122,8 @@ more information.
 
 ## Language-Server Protocol (LSP)
 
-To leverage LSP auto-completions and other functionalities, run
-`:LspInstall <server>` to use [williamboman/mason.nvim] installation
-feature. Use <kbd>Tab</kbd> to list available servers.
-
-You'll need utilities like `npm` and `curl` to install some extensions, see
-[requirements](https://github.com/williamboman/mason.nvim#requirements) for
-more information.
-
-Here's some popular servers to install:
-
-* `:LspInstall html cssls jsonls yamlls`
-* `:LspInstall gopls`
-* `:LspInstall pylsp`
-* `:LspInstall bashls vimls sumneko_lua`
-* `:LspInstall tsserver`
-* and [more](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md)…
+To leverage LSP auto-completions and other functionalities, install language
+servers and enable in [lua/plugins/lspconfig.nvim].
 
 See [lua/plugins/lspconfig.lua] and [lua/lsp/*] for built-in
 mapping and configuration for some language-servers.

@@ -166,31 +166,7 @@ local function setup()
 	-- Configuration Plugins
 
 	-- See https://github.com/folke/neodev.nvim
-	require('neodev').setup({})
-
-	-- Setup language servers using mason and mason-lspconfig
-	-- See https://github.com/williamboman/mason.nvim
-	-- and https://github.com/williamboman/mason-lspconfig.nvim
-	require('mason').setup()
-	local mason_lspconfig = require('mason-lspconfig')
-	mason_lspconfig.setup()
-	local packages = mason_lspconfig.get_installed_servers()
-
-	-- Setup language servers using nvim-lspconfig
-	local lspconfig = require('lspconfig')
-	for _, ls in pairs(packages) do
-		local opts = make_config(ls)
-		lspconfig[ls].setup(opts)
-	end
-
-	-- Reload if files were supplied in command-line arguments
-	if vim.fn.argc() > 0
-		and vim.fn.has('vim_starting')
-		and not vim.o.modified
-	then
-		-- triggers the FileType autocmd that starts the servers
-		vim.cmd('windo e')
-	end
+	-- require('neodev').setup({})
 
 	-- global custom location-list diagnostics window toggle.
 	local args = { noremap = true, silent = true }
@@ -217,6 +193,13 @@ local function setup()
 			" autocmd CursorHold * lua require("user").diagnostic.open_float({ focusable=false })
 		augroup END
 	]], false)
+
+	local lspconfig = require('lspconfig')
+	for _, server in ipairs({ 'rust_analyzer', 'tsserver', 'gopls' }) do
+		local opts = make_config(server)
+		lspconfig[server].setup(opts)
+	end
+
 end
 
 return {
