@@ -804,4 +804,17 @@ if dein#tap('twilight.nvim')
 	nnoremap ]ot :TwilightDisable<CR>
 endif
 
+if dein#tap('vim-wordmotion')
+	let g:wordmotion_nomap = 1
+	nmap <M-w>          <Plug>WordMotion_w
+	nmap <M-e>          <Plug>WordMotion_e
+	nmap <M-b>          <Plug>WordMotion_b
+	xmap <M-w>          <Plug>WordMotion_w
+	xmap <M-e>          <Plug>WordMotion_e
+	xmap <M-b>          <Plug>WordMotion_b
+	omap <M-w>          <Plug>WordMotion_w
+	omap <M-e>          <Plug>WordMotion_e
+	omap <M-b>          <Plug>WordMotion_b
+endif
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

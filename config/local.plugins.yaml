@@ -20,6 +20,8 @@
   merged: 0
   hook_source: lua require('illuminate').configure({ under_cursor = false, providers = { 'lsp' } })
 
+- repo: chaoren/vim-wordmotion
+
 # my completion sources
 - { repo: hrsh7th/cmp-calc, on_source: nvim-cmp }
 
