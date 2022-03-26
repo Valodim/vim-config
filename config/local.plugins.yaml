@@ -60,3 +60,7 @@
   hook_add: |-
     let g:caser_prefix = ',c'
 
+- repo: rhysd/conflict-marker.vim
+  hook_add: |-
+    let g:conflict_marker_enable_mappings = 0
+    let g:conflict_marker_enable_matchit = 0

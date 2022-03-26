@@ -817,4 +817,12 @@ if dein#tap('vim-wordmotion')
 	omap <M-b>          <Plug>WordMotion_b
 endif
 
+if dein#tap('conflict-marker.vim')
+	nmap cK <Plug>(conflict-marker-ourselves)
+	nmap cJ <Plug>(conflict-marker-themselves)
+	nmap cD <Plug>(conflict-marker-none)
+	nmap cH <Plug>(conflict-marker-both)
+	nmap cL <Plug>(conflict-marker-both-rev)
+endif
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
