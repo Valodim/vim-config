@@ -8,6 +8,10 @@
   on_source: nvim-treesitter
   hook_source: lua require('treesj').setup({ use_default_keymaps = false })
 
+- repo: stevearc/oil.nvim
+  on_cmd: Oil
+  hook_source: lua require('oil').setup({ keymaps = { ["<C-s>"] = false } })
+
 # add my own
 - repo: tpope/vim-unimpaired
 

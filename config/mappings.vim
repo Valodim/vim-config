@@ -787,4 +787,8 @@ endif
 
 " }}}
 
+if dein#tap('oil.nvim')
+	nmap - <cmd>Oil<cr>
+endif
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

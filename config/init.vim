@@ -54,10 +54,10 @@ let g:loaded_rrhelper = 1
 let g:no_gitrebase_maps = 1
 let g:no_man_maps = 1  " See share/nvim/runtime/ftplugin/man.vim
 
-let g:loaded_netrw = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
+" let g:loaded_netrw = 1
+" let g:loaded_netrwPlugin = 1
+" let g:loaded_netrwSettings = 1
+" let g:loaded_netrwFileHandlers = 1
 
 " Set main configuration directory as parent directory
 let $VIM_PATH =
