@@ -768,6 +768,11 @@ if dein#tap('treesj')
 	nmap zk <cmd>TSJSplit<CR>
 endif
 
+if dein#tap('vim-altr')
+	nmap <leader>n  <Plug>(altr-forward)
+	nmap <leader>N  <Plug>(altr-back)
+endif
+
 if dein#tap('linediff.vim')
 	xnoremap <Leader>mdf :Linediff<CR>
 	xnoremap <Leader>mda :LinediffAdd<CR>

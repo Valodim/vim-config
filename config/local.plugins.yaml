@@ -10,3 +10,12 @@
 
 # add my own
 - repo: tpope/vim-unimpaired
+
+- repo: kana/vim-altr
+  on_map: { n: <Plug> }
+  hook_source: |-
+    call altr#define('%.ts', '%.test.ts')
+    call altr#define('%.tsx', '%.stories.tsx', '%.module.css')
+    call altr#define('protos/%.proto', 'domain/%.go', 'domain/%_test.go')
+    call altr#define('%.up.sql', '%.down.sql')
+    call altr#define('%.po', 'en/messages.po', 'de/messages.po')
