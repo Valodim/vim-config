@@ -327,6 +327,7 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 | [itchyny/vim-gitbranch] | Lightweight git branch detection
 | [romainl/vim-cool] | Simple plugin that makes hlsearch more useful
 | [haya14busa/vim-asterisk] | Improved * motions
+| [rhysd/accelerated-jk] | Up/down movement acceleration
 | [haya14busa/vim-edgemotion] | Jump to the edge of block
 | [t9md/vim-quickhl] | Highlight words quickly
 | [rafi/vim-sidemenu] | Small side-menu useful for terminal users
@@ -448,6 +449,7 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 [itchyny/vim-gitbranch]: https://github.com/itchyny/vim-gitbranch
 [romainl/vim-cool]: https://github.com/romainl/vim-cool
 [haya14busa/vim-asterisk]: https://github.com/haya14busa/vim-asterisk
+[rhysd/accelerated-jk]: https://github.com/rhysd/accelerated-jk
 [haya14busa/vim-edgemotion]: https://github.com/haya14busa/vim-edgemotion
 [t9md/vim-quickhl]: https://github.com/t9md/vim-quickhl
 [rafi/vim-sidemenu]: https://github.com/rafi/vim-sidemenu
