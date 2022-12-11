@@ -1,0 +1,6 @@
+# disable some of rafi's plugins I don't care about
+- { repo: norcalli/nvim-colorizer.lua, if: 0 }
+- { repo: t9md/vim-choosewin, if: 0 }
+- { repo: mattn/emmet-vim, if: 0 }
+- { repo: olimorris/persisted.nvim,  if: 0 }
+
