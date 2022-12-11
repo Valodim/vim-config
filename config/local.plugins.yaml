@@ -7,3 +7,6 @@
 - repo: Wansmer/treesj
   on_source: nvim-treesitter
   hook_source: lua require('treesj').setup({ use_default_keymaps = false })
+
+# add my own
+- repo: tpope/vim-unimpaired
