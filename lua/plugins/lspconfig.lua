@@ -217,7 +217,7 @@ local function setup()
 	]], false)
 
 	local lspconfig = require('lspconfig')
-	for _, server in ipairs({ 'rust_analyzer', 'gopls' }) do
+	for _, server in ipairs({ 'rust_analyzer', 'gopls', 'pyright', 'stylelint_lsp', 'cssls' }) do
 		local opts = make_config(server)
 		lspconfig[server].setup(opts)
 	end
