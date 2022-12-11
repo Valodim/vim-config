@@ -4,3 +4,6 @@
 - { repo: mattn/emmet-vim, if: 0 }
 - { repo: olimorris/persisted.nvim,  if: 0 }
 
+- repo: Wansmer/treesj
+  on_source: nvim-treesitter
+  hook_source: lua require('treesj').setup({ use_default_keymaps = false })

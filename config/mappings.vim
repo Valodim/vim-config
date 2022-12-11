@@ -763,9 +763,9 @@ if dein#tap('sideways.vim')
 	xmap <silent> i, <Plug>SidewaysArgumentTextobjI
 endif
 
-if dein#tap('splitjoin.vim')
-	nmap sj <cmd>SplitjoinJoin<CR>
-	nmap sk <cmd>SplitjoinSplit<CR>
+if dein#tap('treesj')
+	nmap zj <cmd>TSJJoin<CR>
+	nmap zk <cmd>TSJSplit<CR>
 endif
 
 if dein#tap('linediff.vim')
