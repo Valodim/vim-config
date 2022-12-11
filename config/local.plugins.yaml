@@ -19,3 +19,5 @@
     call altr#define('protos/%.proto', 'domain/%.go', 'domain/%_test.go')
     call altr#define('%.up.sql', '%.down.sql')
     call altr#define('%.po', 'en/messages.po', 'de/messages.po')
+
+- { repo: LnL7/vim-nix, on_ft: nix }
