@@ -34,9 +34,10 @@ require('nvim-treesitter.configs').setup({
 	-- 	},
 	-- },
 
-	indent = {
-		enable = true,
-	},
+	-- buggy for golang, let's try without :(
+	-- indent = {
+		-- enable = true,
+	-- },
 
 	refactor = {
 		highlight_definitions = { enable = true },
