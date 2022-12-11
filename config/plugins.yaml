@@ -304,8 +304,10 @@
 - { repo: williamboman/mason.nvim, on_source: nvim-lspconfig }
 - { repo: williamboman/mason-lspconfig.nvim, on_source: nvim-lspconfig }
 - { repo: hrsh7th/cmp-nvim-lsp, on_source: nvim-lspconfig }
-- { repo: kosayoda/nvim-lightbulb, on_source: nvim-lspconfig }
-- { repo: folke/neodev.nvim, on_source: nvim-lspconfig }
+- repo: kosayoda/nvim-lightbulb
+  on_source: nvim-lspconfig
+  hook_source: lua require('nvim-lightbulb').setup()
+- { repo: folke/neodev.nvim, on_source: nvim-lspconfig, if: 0 }
 - { repo: ray-x/lsp_signature.nvim, on_source: nvim-lspconfig}
 - { repo: SmiteshP/nvim-navic, on_source: nvim-lspconfig }
 

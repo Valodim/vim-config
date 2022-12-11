@@ -179,6 +179,7 @@ local function setup()
 	-- See https://github.com/kosayoda/nvim-lightbulb
 	require('nvim-lightbulb').setup({ ignore = { 'null-ls' } })
 
+	vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 	vim.api.nvim_exec([[
 		augroup user_lspconfig
 			autocmd!
