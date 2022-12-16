@@ -37,7 +37,7 @@ require('null-ls').setup({
 		}),
 
 		-- Javascript
-		builtins.diagnostics.eslint,
+		-- builtins.diagnostics.eslint,
 
 		-- Go
 		builtins.formatting.gofmt.with({
@@ -90,6 +90,25 @@ require('null-ls').setup({
 			runtime_condition = has_exec('proselint'),
 			extra_filetypes = { 'vimwiki' },
 		}),
+
+		-- protobuf
+		builtins.diagnostics.protoc_gen_lint.with({
+			runtime_condition = has_exec('protoc'),
+			extra_args = function(params)
+				-- add path of the proto file to include dirs
+				local include_path = string.gsub(params.bufname, '[^/]+$', '')
+				return {'-I', include_path}
+			end
+		}),
+
+		-- typescript
+		builtins.diagnostics.eslint_d, -- eslint or eslint_d
+		builtins.code_actions.eslint_d, -- eslint or eslint_d
+		builtins.formatting.prettierd.with({
+			runtime_condition = has_exec('prettierd'),
+			disabled_filetypes = { 'css', 'scss' },
+		}),
+
 		-- builtins.code_actions.proselint.with({
 		-- 	runtime_condition = has_exec('proselint'),
 		-- 	extra_filetypes = { 'vimwiki' },
