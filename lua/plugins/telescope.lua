@@ -377,6 +377,9 @@ local setup = function()
 					layout_config = { width = 0.35, height = 0.35 },
 				}
 			},
+			undo = {
+				-- telescope-undo.nvim config, see below
+			},
 		}
 	}
 

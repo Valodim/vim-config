@@ -64,3 +64,8 @@
   hook_add: |-
     let g:conflict_marker_enable_mappings = 0
     let g:conflict_marker_enable_matchit = 0
+
+- repo: debugloop/telescope-undo.nvim
+  depends: [ plenary.nvim, telescope.nvim ]
+  on_lua: telescope
+  hook_post_source: lua require('telescope').load_extension('undo')
