@@ -46,7 +46,7 @@ local on_attach = function(client, bufnr)
 	map_buf('n', '<Leader>ce', '<cmd>lua vim.diagnostic.open_float({source=true})<CR>', opts)
 
 	if vim.fn.has('nvim-0.8') == 1 then
-		map_buf('n', ',f', '<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>', opts)
+		map_buf('n', ',f', '<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000, filter = function(client) return client.name ~= "tsserver" end })<CR>', opts)
 	else
 		map_buf('n', ',f', '<cmd>lua vim.lsp.buf.formatting(nil, 2000)<CR>', opts)
 	end
