@@ -157,6 +157,7 @@ local setup = function()
 	local telescope = require('telescope')
 	local transform_mod = require('telescope.actions.mt').transform_mod
 	local actions = require('telescope.actions')
+	local trouble = require('trouble.providers.telescope')
 
 	-- Transform to Telescope proper actions.
 	myactions = transform_mod(myactions)
@@ -209,9 +210,12 @@ local setup = function()
 
 					['<C-b>'] = actions.preview_scrolling_up,
 					['<C-f>'] = actions.preview_scrolling_down,
+
+					['<c-r>'] = trouble.open_with_trouble,
 				},
 
 				n = {
+
 					['q']     = actions.close,
 					['<Esc>'] = actions.close,
 
@@ -243,11 +247,14 @@ local setup = function()
 					['sg'] = actions.select_vertical,
 					['st'] = actions.select_tab,
 					['l'] = actions.select_default,
+					['<C-t>'] = actions.select_tab,
 
 					['w'] = myactions.smart_send_to_qflist,
 					['e'] = myactions.send_to_qflist,
 
 					['!'] = actions.edit_command_line,
+
+					['<c-r>'] = trouble.open_with_trouble,
 				},
 
 			},
