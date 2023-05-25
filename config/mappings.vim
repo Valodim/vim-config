@@ -825,4 +825,8 @@ if dein#tap('conflict-marker.vim')
 	nmap cL <Plug>(conflict-marker-both-rev)
 endif
 
+" Insert current date or a uuid
+nmap <silent> <Leader>d "=strftime("%F")<CR>P
+nmap <silent> <Leader>u "=system("uuidgen")<CR>P
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
