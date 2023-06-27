@@ -311,6 +311,10 @@
 - { repo: folke/neodev.nvim, on_source: nvim-lspconfig, if: 0 }
 - { repo: ray-x/lsp_signature.nvim, on_source: nvim-lspconfig}
 - { repo: SmiteshP/nvim-navic, on_source: nvim-lspconfig }
+- repo: SmiteshP/nvim-navbuddy
+  on_source: nvim-lspconfig
+  depends: nui.nvim
+  hook_source: lua require('nvim-navbuddy').setup{window={sections={right={preview="none"}}}}
 
 - repo: jose-elias-alvarez/null-ls.nvim
   if: has('nvim-0.7')

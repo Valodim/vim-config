@@ -61,14 +61,17 @@ local on_attach = function(client, bufnr)
 	map_buf('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 	map_buf('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
-	-- nvim-navic
+	-- nvim-navic and nvim-navbuddy
 	-- See https://github.com/SmiteshP/nvim-navic
+	-- See https://github.com/SmiteshP/nvim-navbuddy
 	local navic = require('nvim-navic')
+	local navbuddy = require('nvim-navbuddy')
 	if
 		client.supports_method('textDocument/documentSymbol')
 		and not navic.is_available()
 	then
 		navic.attach(client, bufnr)
+		navbuddy.attach(client, bufnr)
 	end
 
 	-- lspsaga.nvim

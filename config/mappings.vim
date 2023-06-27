@@ -817,6 +817,10 @@ if dein#tap('vim-wordmotion')
 	omap <M-b>          <Plug>WordMotion_b
 endif
 
+if dein#tap('nvim-navbuddy')
+	nmap <silent> <Leader>b :Navbuddy<CR>
+endif
+
 if dein#tap('conflict-marker.vim')
 	nmap cK <Plug>(conflict-marker-ourselves)
 	nmap cJ <Plug>(conflict-marker-themselves)
