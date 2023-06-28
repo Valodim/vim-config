@@ -175,6 +175,7 @@ return {
 								return is_file_window() and is_min_width(70)
 							end,
 						},
+						{ 'navic' }
 						-- {
 						-- 	function() return require('nvim-navic').get_location() end,
 						-- 	padding = { left = 1, right = 0 },
