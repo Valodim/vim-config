@@ -97,18 +97,6 @@ return {
 				},
 				sections = {
 					lualine_a = {
-						-- Left edge block.
-						{
-							function()
-								return '▊'
-							end,
-							padding = 0,
-							separator = '',
-							color = function()
-								local hl = is_file_window() and 'Statement' or 'Function'
-								return LazyVim.ui.fg(hl)
-							end,
-						},
 						-- Readonly/zoomed/hash symbol.
 						{
 							padding = { left = 1, right = 0 },
