@@ -81,13 +81,6 @@ return {
 				},
 				sections = {
 					lualine_a = {
-						-- Left edge block.
-						{
-							function() return '▊' end,
-							color = fg({'Directory'}, '#51afef'),
-							padding = 0,
-						},
-
 						-- Readonly/zoomed/hash symbol.
 						{
 							padding = { left = 1, right = 0 },
