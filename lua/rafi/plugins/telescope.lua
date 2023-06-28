@@ -152,7 +152,10 @@ return {
 		},
 		config = function(_, opts)
 			require('telescope').setup(opts)
-			require('telescope').load_extension('persisted')
+			local Util = require('rafi.lib.utils')
+			if Util.has('persisted') then
+				require('telescope').load_extension('persisted')
+			end
 		end,
 		-- stylua: ignore
 		keys = {
