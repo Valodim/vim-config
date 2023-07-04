@@ -167,23 +167,12 @@ return {
 						},
 
 						-- Whitespace trails
-						{
+ 						{
 							RafiUtil.lualine.trails(),
 							cond = is_file_window,
 							padding = { left = 1, right = 0 },
 							color = LazyVim.ui.fg('Identifier'),
 						},
-
-						{
-							'diagnostics',
-							symbols = {
-								error = icons.status.diagnostics.error,
-								warn = icons.status.diagnostics.warn,
-								info = icons.status.diagnostics.info,
-								hint = icons.status.diagnostics.hint,
-							},
-						},
-
 						{
 							function()
 								if vim.v.hlsearch == 0 then
@@ -285,14 +274,15 @@ return {
 							cond = function () return package.loaded['dap'] and require('dap').status() ~= '' end,
 							color = LazyVim.ui.fg('Debug'),
 						},
-						-- lazy.nvim updates
 						{
-							require('lazy.status').updates,
-							cond = require('lazy.status').has_updates,
-							color = LazyVim.ui.fg('Comment'),
-							on_click = function()
-								vim.cmd([[Lazy]])
-							end,
+							'diagnostics',
+							padding = { left = 1, right = 0 },
+							symbols = {
+								error = icons.status.diagnostics.error,
+								warn = icons.status.diagnostics.warn,
+								info = icons.status.diagnostics.info,
+								hint = icons.status.diagnostics.hint,
+							},
 						},
 					},
 					lualine_y = {
