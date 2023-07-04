@@ -141,16 +141,16 @@ return {
 						},
 					},
 					lualine_c = {
-						{
-							'diagnostics',
-							padding = { left = 1, right = 0 },
-							symbols = {
-								error = icons.status.diagnostics.error,
-								warn = icons.status.diagnostics.warn,
-								info = icons.status.diagnostics.info,
-								hint = icons.status.diagnostics.hint,
-							},
-						},
+						-- {
+						-- 	'diagnostics',
+						-- 	padding = { left = 1, right = 0 },
+						-- 	symbols = {
+						-- 		error = icons.status.diagnostics.error,
+						-- 		warn = icons.status.diagnostics.warn,
+						-- 		info = icons.status.diagnostics.info,
+						-- 		hint = icons.status.diagnostics.hint,
+						-- 	},
+						-- },
 
 						-- Whitespace trails
 						{
@@ -163,18 +163,18 @@ return {
 						-- Start truncating here
 						{ function() return '%<' end, padding = 0 },
 
-						{
-							'diff',
-							symbols = {
-								added = icons.status.git.added,
-								modified = icons.status.git.modified,
-								removed = icons.status.git.removed,
-							},
-							padding = { left = 1, right = 0 },
-							cond = function()
-								return is_file_window() and is_min_width(70)
-							end,
-						},
+						-- {
+						-- 	'diff',
+						-- 	symbols = {
+						-- 		added = icons.status.git.added,
+						-- 		modified = icons.status.git.modified,
+						-- 		removed = icons.status.git.removed,
+						-- 	},
+						-- 	padding = { left = 1, right = 0 },
+						-- 	cond = function()
+						-- 		return is_file_window() and is_min_width(70)
+						-- 	end,
+						-- },
 						{ 'navic' }
 						-- {
 						-- 	function() return require('nvim-navic').get_location() end,
@@ -214,12 +214,27 @@ return {
 							end,
 							color = { fg = "#ff9e64" },
 						},
-						-- lazy.nvim updates
 						{
-							require('lazy.status').updates,
-							cond = require('lazy.status').has_updates,
-							color = fg({'Comment'}),
-							separator = { left = '' },
+							'diagnostics',
+							padding = { left = 1, right = 0 },
+							symbols = {
+								error = icons.status.diagnostics.error,
+								warn = icons.status.diagnostics.warn,
+								info = icons.status.diagnostics.info,
+								hint = icons.status.diagnostics.hint,
+							},
+						},
+						{
+							'diff',
+							symbols = {
+								added = icons.status.git.added,
+								modified = icons.status.git.modified,
+								removed = icons.status.git.removed,
+							},
+							padding = { left = 1, right = 1 },
+							cond = function()
+								return is_file_window() and is_min_width(70)
+							end,
 						},
 					},
 					lualine_y = {
