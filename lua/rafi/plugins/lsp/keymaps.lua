@@ -15,13 +15,20 @@ function M.get()
 	---@class PluginLspKeys
 	-- stylua: ignore
 	M._keys =  {
-		{ 'gd', vim.lsp.buf.definition, desc = 'Goto Definition', has = 'definition' },
-		{ 'gr', vim.lsp.buf.references, desc = 'References', nowait = true },
+		-- done via def-or-references
+		-- { 'gd', vim.lsp.buf.definition, desc = 'Goto Definition', has = 'definition' },
+		-- done via trouble
+		-- { 'gr', vim.lsp.buf.references, desc = 'References', nowait = true },
 		{ 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
 		{ 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
 		{ 'gy', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
 		{ 'K', function() return vim.lsp.buf.hover() end, desc = 'Hover' },
 		{ 'gK', function() return vim.lsp.buf.signature_help() end, desc = 'Signature Help' },
+
+		{ ']d', function() M.diagnostic_goto(true) end, desc = 'Next Diagnostic' },
+		{ '[d', function() M.diagnostic_goto(false) end, desc = 'Prev Diagnostic' },
+		{ ']e', function() M.diagnostic_goto(true, 'ERROR') end, desc = 'Next Error' },
+		{ '[e', function() M.diagnostic_goto(false, 'ERROR') end, desc = 'Prev Error' },
 
 		{ '<leader>cR', function() Snacks.rename.rename_file() end, desc = 'Rename File', mode = {'n'}, has = { 'workspace/didRenameFiles', 'workspace/willRenameFiles' }},
 		{ '<leader>cr', vim.lsp.buf.rename, desc = 'Rename', has = 'rename' },
@@ -43,6 +50,7 @@ function M.get()
 		{ '<leader>csf', M.formatter_select, mode = { 'n', 'x' }, desc = 'Formatter Select' },
 		{ '<Leader>csi', vim.lsp.buf.incoming_calls, desc = 'Incoming calls' },
 		{ '<Leader>cso', vim.lsp.buf.outgoing_calls, desc = 'Outgoing calls' },
+
 		{ '<Leader>fwa', vim.lsp.buf.add_workspace_folder, desc = 'Show Workspace Folders' },
 		{ '<Leader>fwr', vim.lsp.buf.remove_workspace_folder, desc = 'Remove Workspace Folder' },
 		{ '<Leader>fwl', '<cmd>lua =vim.lsp.buf.list_workspace_folders()<CR>', desc = 'List Workspace Folders' },
