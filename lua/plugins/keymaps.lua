@@ -62,4 +62,12 @@ return {
 			{ '<Leader>N', '<Plug>(altr-back)', mode = { 'n' } },
 		},
 	},
+
+	{
+		'rhysd/accelerated-jk',
+		keys = {
+			{ 'j', '<Plug>(accelerated_jk_j)', mode = { 'n' } },
+			{ 'k', '<Plug>(accelerated_jk_k)', mode = { 'n' } },
+		},
+	},
 }
