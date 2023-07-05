@@ -19,11 +19,14 @@ function M.get()
 	-- stylua: ignore
 	M._keys =  {
 		{ 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration', has = 'declaration' },
-		{ 'gd', vim.lsp.buf.definition, desc = 'Goto Definition', has = 'definition' },
-		{ 'gr', vim.lsp.buf.references, desc = 'References', has = 'references' },
+		-- V: done via definition-or-references
+		-- { 'gd', vim.lsp.buf.definition, desc = 'Goto Definition', has = 'definition' },
+		-- V: done by trouble instead
+		-- { 'gr', vim.lsp.buf.references, desc = 'References', has = 'references' },
 		{ 'gy', vim.lsp.buf.type_definition, desc = 'Goto Type Definition', has = 'typeDefinition' },
 		{ 'gi', vim.lsp.buf.implementation, desc = 'Goto Implementation', has = 'implementation' },
 		{ 'gK', vim.lsp.buf.signature_help, desc = 'Signature Help', has = 'signatureHelp' },
+		{ ',s', vim.lsp.buf.signature_help, desc = 'Signature Help', has = 'signatureHelp' },
 		{ '<C-g>h', vim.lsp.buf.signature_help, mode = 'i', desc = 'Signature Help', has = 'signatureHelp' },
 		{ ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
 		{ '[d', M.diagnostic_goto(false), desc = 'Prev Diagnostic' },
@@ -47,11 +50,11 @@ function M.get()
 		{ '<Leader>uD', function() M.diagnostic_toggle(true) end, desc = 'Disable All Diagnostics' },
 
 		{ '<leader>cl', '<cmd>LspInfo<cr>' },
-		{ '<leader>cf', format, desc = 'Format Document', has = 'formatting' },
-		{ '<leader>cf', format, mode = 'x', desc = 'Format Range', has = 'rangeFormatting' },
-		{ '<Leader>cr', vim.lsp.buf.rename, desc = 'Rename', has = 'rename' },
+		{ ',f', format, desc = 'Format Document', has = 'formatting' },
+		{ ',f', format, mode = 'x', desc = 'Format Range', has = 'rangeFormatting' },
+		{ ',r', vim.lsp.buf.rename, desc = 'Rename', has = 'rename' },
 		{ '<Leader>ce', vim.diagnostic.open_float, desc = 'Open diagnostics' },
-		{ '<Leader>ca', vim.lsp.buf.code_action, mode = { 'n', 'x' }, has = 'codeAction', desc = 'Code Action' },
+		{ ',a', vim.lsp.buf.code_action, mode = { 'n', 'x' }, has = 'codeAction', desc = 'Code Action' },
 		{ '<Leader>cA', function()
 			vim.lsp.buf.code_action({
 				context = {
