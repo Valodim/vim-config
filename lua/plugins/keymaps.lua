@@ -44,4 +44,22 @@ return {
 			vim.g['asterisk#keeppos'] = 1
 		end,
 	},
+
+	{
+		'kana/vim-altr',
+		config = function()
+			-- load the colorscheme here
+			vim.cmd([[
+				call altr#define('%.ts', '%.test.ts')
+				call altr#define('%.tsx', '%.stories.tsx', '%.module.css')
+				call altr#define('protos/%.proto', 'domain/%.go', 'domain/%_test.go')
+				call altr#define('%.up.sql', '%.down.sql')
+				call altr#define('%.po', 'en/messages.po', 'de/messages.po')
+			]])
+		end,
+		keys = {
+			{ '<Leader>n', '<Plug>(altr-forward)', mode = { 'n' } },
+			{ '<Leader>N', '<Plug>(altr-back)', mode = { 'n' } },
+		},
+	},
 }
