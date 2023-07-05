@@ -465,6 +465,9 @@ return {
 					},
 				},
 				find_files = {
+					theme = 'ivy',
+					previewer = false,
+					results_title = '';
 					layout_config = { preview_width = 0.5 },
 					hidden = true,
 					find_command = find_command,
