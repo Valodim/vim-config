@@ -7,4 +7,5 @@ return {
   { 's1n7ax/nvim-window-picker', enabled = false },
   { 'echasnovski/mini.bracketed', enabled = false },
   { 'haya14busa/vim-edgemotion', enabled = false },
+	{ 'williamboman/mason.nvim', enabled = false },
 }
