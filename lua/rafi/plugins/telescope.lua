@@ -436,6 +436,9 @@ return {
 						},
 					},
 					find_files = {
+						theme = 'ivy',
+						previewer = false,
+						results_title = '';
 						find_command = has_ripgrep and find_args or nil,
 					},
 					live_grep = {
