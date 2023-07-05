@@ -333,7 +333,7 @@ map('n', '<Leader>a', function()
 end, { desc = 'Open Location List' })
 
 -- Switch with adjacent window
-map('n', '<C-x>', '<C-w>x', { remap = true, desc = 'Swap windows' })
+-- map('n', '<C-x>', '<C-w>x', { remap = true, desc = 'Swap windows' })
 
 map('n', 'sb', '<cmd>buffer#<CR>', { desc = 'Alternate buffer' })
 map('n', 'sc', '<cmd>close<CR>', { desc = 'Close window' })
