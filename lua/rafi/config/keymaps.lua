@@ -417,7 +417,7 @@ if vim.F.if_nil(vim.g.window_q_mapping, true) then
 end
 
 -- Switch with adjacent window
-map('n', '<C-x>', '<C-w>x<C-w>w', { remap = true, desc = 'Swap adjacent windows' })
+ -- map('n', '<C-x>', '<C-w>x<C-w>w', { remap = true, desc = 'Swap adjacent windows' })
 map('n', '<C-w>d', '<C-W>c', { desc = 'Delete Window', remap = true })
 
 map('n', 'sb', '<cmd>buffer#<CR>', { desc = 'Alternate buffer' })
