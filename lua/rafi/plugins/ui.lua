@@ -143,6 +143,8 @@ return {
 				separator = '  ',
 				highlight = true,
 				icons = require('rafi.config').icons.kinds,
+				-- V: only show depth 1 context
+				depth_limit = 1,
 			}
 		end,
 	},
