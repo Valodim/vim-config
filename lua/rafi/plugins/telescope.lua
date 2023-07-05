@@ -172,7 +172,8 @@ return {
 			{ '<localleader>t', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', desc = 'Workspace symbols' },
 			{ '<localleader>v', '<cmd>Telescope registers<CR>', desc = 'Registers' },
 			{ '<localleader>u', '<cmd>Telescope spell_suggest<CR>', desc = 'Spell suggest' },
-			{ '<localleader>s', '<cmd>Telescope persisted<CR>', desc = 'Sessions' },
+			{ '<localleader>s', '<cmd>Telescope git_status<CR>', desc = 'Git status' },
+			-- { '<localleader>s', '<cmd>Telescope persisted<CR>', desc = 'Sessions' },
 			{ '<localleader>x', '<cmd>Telescope oldfiles<CR>', desc = 'Old files' },
 			{ '<localleader>;', '<cmd>Telescope command_history<CR>', desc = 'Command history' },
 			{ '<localleader>:', '<cmd>Telescope commands<CR>', desc = 'Commands' },
@@ -361,11 +362,15 @@ return {
 
 							['<C-q>'] = myactions.smart_send_to_qflist,
 
-							['<C-n>'] = actions.cycle_history_next,
-							['<C-p>'] = actions.cycle_history_prev,
+							-- ['<C-n>'] = actions.cycle_history_next,
+							-- ['<C-p>'] = actions.cycle_history_prev,
 
 							['<C-b>'] = actions.preview_scrolling_up,
 							['<C-f>'] = actions.preview_scrolling_down,
+
+							['<C-r>'] = function(...)
+								return require('trouble.providers.telescope').open_with_trouble(...)
+							end,
 						},
 
 						n = {
@@ -403,6 +408,9 @@ return {
 							['!'] = actions.edit_command_line,
 
 							['t'] = function(...)
+								return require('trouble.providers.telescope').open_with_trouble(...)
+							end,
+							['<C-r>'] = function(...)
 								return require('trouble.providers.telescope').open_with_trouble(...)
 							end,
 
