@@ -227,10 +227,10 @@ map('x', '<Leader>dd', '""Y""Pgv', { desc = 'Duplicate selection' })
 -- Search, substitute, diff {{{
 
 -- Switch */g* and #/g#
-map('n', '*', 'g*')
-map('n', 'g*', '*')
-map('n', '#', 'g#')
-map('n', 'g#', '#')
+-- map('n', '*', 'g*')
+-- map('n', 'g*', '*')
+-- map('n', '#', 'g#')
+-- map('n', 'g#', '#')
 
 -- Clear search with <Esc>
 map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear hlsearch' })
