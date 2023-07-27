@@ -131,10 +131,10 @@ map('n', '<Leader>cw', '<cmd>lua MiniTrailspace.trim()<CR>', { desc = 'Erase Whi
 -- ===
 
 -- Switch */g* and #/g#
-map('n', '*', 'g*')
-map('n', 'g*', '*')
-map('n', '#', 'g#')
-map('n', 'g#', '#')
+-- map('n', '*', 'g*')
+-- map('n', 'g*', '*')
+-- map('n', '#', 'g#')
+-- map('n', 'g#', '#')
 
 -- Clear search with <Esc>
 map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear Search Highlight' })
