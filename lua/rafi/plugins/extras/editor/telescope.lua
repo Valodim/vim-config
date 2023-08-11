@@ -292,7 +292,7 @@ return {
 
 			local function find_command()
 				if 1 == vim.fn.executable('rg') then
-					return { 'rg', '--files', '--color', 'never', '--no-ignore-vcs', '--smart-case', '-g', '!.git' }
+					return { 'rg', '--files', '--color', 'never', '--smart-case', '-g', '!.git' }
 				elseif 1 == vim.fn.executable('fd') then
 					return { 'fd', '--type', 'f', '--color', 'never', '-E', '.git' }
 				elseif 1 == vim.fn.executable('fdfind') then
@@ -314,7 +314,6 @@ return {
 			}
 			table.insert(vimgrep_args, '--hidden')
 			table.insert(vimgrep_args, '--follow')
-			table.insert(vimgrep_args, '--no-ignore-vcs')
 			table.insert(vimgrep_args, '--glob')
 			table.insert(vimgrep_args, '!**/.git/*')
 
