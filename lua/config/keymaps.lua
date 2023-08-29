@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map('i', 'jj', '')
+-- map('i', 'jj', '')
 map('i', 'kj', '')
 map('i', ';;', ';')
 
