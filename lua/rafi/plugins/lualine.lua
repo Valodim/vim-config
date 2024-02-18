@@ -196,23 +196,7 @@ return {
 							separator = '',
 							padding = { left = 1, right = 0 },
 						},
-
-						{
-							function()
-								return require('nvim-navic').get_location()
-							end,
-							padding = { left = 1, right = 0 },
-							cond = function()
-								return vim.g.structure_status
-									and is_min_width(100)
-									and package.loaded['nvim-navic']
-									and require('nvim-navic').is_available()
-							end,
-							on_click = function()
-								vim.g.structure_status = not vim.g.structure_status
-								require('lualine').refresh()
-							end,
-						},
+						{ 'navic' }
 					},
 					lualine_x = {
 						-- Diff (git)
